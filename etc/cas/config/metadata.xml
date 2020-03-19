@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?><md:EntityDescriptor xmlns:md="urn:oasis:names:tc:SAML:2.0:metadata" entityID="https://egeos.my.salesforce.com" validUntil="2028-11-27T09:50:11.735Z" xmlns:ds="http://www.w3.org/2000/09/xmldsig#">
+   <md:IDPSSODescriptor WantAuthnRequestsSigned="false" protocolSupportEnumeration="urn:oasis:names:tc:SAML:2.0:protocol">
+      <md:KeyDescriptor use="signing">
+         <ds:KeyInfo>
+            <ds:X509Data>
+              <ds:X509Certificate>MIIEljCCA36gAwIBAgIOAW6iVszgAAAAABwvYBswDQYJKoZIhvcNAQELBQAwgYkxITAfBgNVBAMMGFNlbGZTaWduZWRDZXJ0XzI1Tm92MjAxOTEYMBYGA1UECwwPMDBEMXIwMDAwMDBxb09jMRcwFQYDVQQKDA5TYWxlc2ZvcmNlLmNvbTEWMBQGA1UEBwwNU2FuIEZyYW5jaXNjbzELMAkGA1UECAwCQ0ExDDAKBgNVBAYTA1VTQTAeFw0xOTExMjUxMTMzNDdaFw0yMDExMjUwMDAwMDBaMIGJMSEwHwYDVQQDDBhTZWxmU2lnbmVkQ2VydF8yNU5vdjIwMTkxGDAWBgNVBAsMDzAwRDFyMDAwMDAwcW9PYzEXMBUGA1UECgwOU2FsZXNmb3JjZS5jb20xFjAUBgNVBAcMDVNhbiBGcmFuY2lzY28xCzAJBgNVBAgMAkNBMQwwCgYDVQQGEwNVU0EwggEiMA0GCSqGSIb3DQEBAQUAA4IBDwAwggEKAoIBAQDPnHZxDzWDYZ4JzZM0PwxCbJs1I81JFvY9yEgrbLgEm/NgeT2wNh2VopvXuXSSyHffKrsfyHanQTBDsEWc2xzdT9217Aj2DWveBupBDL3W+Zf3v70mLRhCzZfdtvd/FWOXIp20dIlx81/jvofMiRxKhEMG2gs/9iPVGwMGBfJg7XN1rFIWA+IaPS/UY4xcMUVo4iaZK9dq5t9+nY97Vx/M1B+m/xg9TBGVZ9Tngy7w+iJ3XkMgqxcpHrxT2j+XefDmwlaxrUdxF+/zFATtxtKA+Mi/NfQjPOw8toHrVp6a3mETa0fOBgz0O7Spqun/b54JU4mEwCv+ce0QW33ixhhPAgMBAAGjgfkwgfYwHQYDVR0OBBYEFMN+BWoXvY0KyebxDpkTM2XzSrtOMA8GA1UdEwEB/wQFMAMBAf8wgcMGA1UdIwSBuzCBuIAUw34Fahe9jQrJ5vEOmRMzZfNKu06hgY+kgYwwgYkxITAfBgNVBAMMGFNlbGZTaWduZWRDZXJ0XzI1Tm92MjAxOTEYMBYGA1UECwwPMDBEMXIwMDAwMDBxb09jMRcwFQYDVQQKDA5TYWxlc2ZvcmNlLmNvbTEWMBQGA1UEBwwNU2FuIEZyYW5jaXNjbzELMAkGA1UECAwCQ0ExDDAKBgNVBAYTA1VTQYIOAW6iVszgAAAAABwvYBswDQYJKoZIhvcNAQELBQADggEBAHD24/4hkDdvHEXYsrp0xGP6E2y1V87ITV+3XbOfbLzVhGzN3ndTVzlHVp534mfOz71Dh8U1qWH+ycib7LxAk7QqG3/oChFWhsGeplWMKHp6thrdCiomu8uHZb6RIz5Fw/m7HRsdk981k2ThL7hNa1zt7mgFEa34BtWsP4HqrMUnOlPCHs0sRXQEtavtmROlbOQk1j1puL93C0iRkwHB/GmzhIQW7Yufgo7swrGN8sA3JBGj2A/1SwlAnTIIQ3tB/975sdsRvhi5lE1hAKhkJCfMcIe5NWOYfMSwzoyi0UMVvZNqokV/wPPnK7cr8MFiDT2ToHPsUed8PLgPoDDUgU0=</ds:X509Certificate>
+            </ds:X509Data>
+         </ds:KeyInfo>
+      </md:KeyDescriptor>
+      <md:NameIDFormat>urn:oasis:names:tc:SAML:2.0:nameid-format:persistent</md:NameIDFormat>
+      <md:SingleSignOnService Binding="urn:oasis:names:tc:SAML:2.0:bindings:HTTP-POST" Location="https://egeos.force.com/idp/endpoint/HttpPost"/>
+      <md:SingleSignOnService Binding="urn:oasis:names:tc:SAML:2.0:bindings:HTTP-Redirect" Location="https://egeos.force.com/idp/endpoint/HttpRedirect"/>
+   </md:IDPSSODescriptor>
+</md:EntityDescriptor>

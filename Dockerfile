@@ -13,7 +13,7 @@ RUN mkdir -p ~/.gradle \
     && ./gradlew --version;
 
 RUN cd cas-overlay \
-    && ./gradlew clean build --parallel;
+    && ./gradlew clean build --parallel > myLogs.txt 2>&1;
 
 FROM adoptopenjdk/openjdk11:alpine-jre AS cas
 
@@ -26,6 +26,7 @@ RUN cd / \
     && mkdir -p /etc/cas/saml \
     && mkdir -p cas-overlay;
 
+COPY run.sh /cas-overlay/run.sh
 COPY etc/cas/ /etc/cas/
 COPY etc/cas/config/ /etc/cas/config/
 COPY etc/cas/services/ /etc/cas/services/
@@ -36,5 +37,15 @@ EXPOSE 8080 8443
 
 ENV PATH $PATH:$JAVA_HOME/bin:.
 
+ENV CAS_SERVER_NAME https://cas.example.org:8443
+ENV CAS_SERVER_PREFIX cas
+ENV CAS_LDAP_URL ldap://cas-ldap:389
+ENV CAS_LDAP_BASE_DN dc=e-geos,dc=com
+ENV CAS_LDAP_BIND_DN cn=manager,dc=e-geos,dc=com
+ENV CAS_LDAP_BIND_CREDENTIAL password
+ENV CAS_LDAP_DN_FORMAT cn=manager,dc=e-geos,dc=com
+
+
 WORKDIR cas-overlay
-ENTRYPOINT ["java", "-server", "-noverify", "-Xmx2048M", "-jar", "cas.war"]
+# ENTRYPOINT ["java", "-server", "-noverify", "-Xmx2048M", "-jar", "cas.war"]
+ENTRYPOINT ["/bin/sh", "-c", "/cas-overlay/run.sh"]

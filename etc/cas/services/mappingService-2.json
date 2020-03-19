@@ -1,0 +1,12 @@
+{
+  "@class" : "org.apereo.cas.services.RegexRegisteredService",
+  "serviceId" : "^(http|https)://.*/mapping_service/.*",
+  "name" : "mappingService",
+  "id" : 2,
+  "evaluationOrder" : 10,
+  "usernameAttributeProvider" : {                                                     
+    "@class" : "org.apereo.cas.services.PrincipalAttributeRegisteredServiceUsernameProvider",
+    "usernameAttribute" : "uid",        
+    "canonicalizationMode" : "NONE"     
+  }
+}
